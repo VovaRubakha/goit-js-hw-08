@@ -2,6 +2,7 @@ import throttle from 'lodash.throttle';
 
 const KEY_LS_INPUT = `feedback-form-state`;
 const form = document.querySelector(`.feedback-form`);
+const saveToLS = {};
 
 function submitForm(e) {
   e.preventDefault();
@@ -10,7 +11,6 @@ function submitForm(e) {
   localStorage.removeItem('feedback-form-state');
 }
 
-const saveToLS = {};
 function inputForm(e) {
   let { name, value } = e.target;
   saveToLS[name] = value;
