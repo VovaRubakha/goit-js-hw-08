@@ -10,11 +10,11 @@ function submitForm(e) {
   localStorage.removeItem('feedback-form-state');
 }
 
-const saveData = {};
+const saveToLS = {};
 function inputForm(e) {
   let { name, value } = e.target;
-  saveData[name] = value;
-  localStorage.setItem(KEY_LS_INPUT, JSON.stringify(saveData));
+  saveToLS[name] = value;
+  localStorage.setItem(KEY_LS_INPUT, JSON.stringify(saveToLS));
 }
 
 form.addEventListener(`submit`, submitForm);
