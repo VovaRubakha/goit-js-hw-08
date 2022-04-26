@@ -3,6 +3,7 @@ import throttle from 'lodash.throttle';
 const KEY_LS_INPUT = `feedback-form-state`;
 const form = document.querySelector(`.feedback-form`);
 const saveToLS = {};
+console.log(form);
 
 function submitForm(e) {
   e.preventDefault();
@@ -15,6 +16,7 @@ function inputForm(e) {
   let { name, value } = e.target;
   saveToLS[name] = value;
   localStorage.setItem(KEY_LS_INPUT, JSON.stringify(saveToLS));
+  console.log(e.target);
 }
 
 form.addEventListener(`submit`, submitForm);
