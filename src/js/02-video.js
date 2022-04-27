@@ -17,10 +17,3 @@ function getCurrentTime(data) {
 
 player.on('timeupdate', throttle(getCurrentTime, 1000));
 
-player.on('play', function () {
-  console.log('played the video!');
-});
-
-player.getVideoTitle().then(function (title) {
-  console.log('title:', title);
-});

@@ -16,8 +16,14 @@ function inputForm(e) {
   let { name, value } = e.target;
   saveToLS[name] = value;
   localStorage.setItem(KEY_LS_INPUT, JSON.stringify(saveToLS));
-  console.log(e.target);
 }
-
+function onInput() {
+  const data = JSON.parse(localStorage.getItem(KEY_LS_INPUT));
+  if (!data) return;
+  Object.keys(data).forEach(e => {
+    form.elements[e].value = data[e];
+  });
+}
+onInput();
 form.addEventListener(`submit`, submitForm);
 form.addEventListener(`input`, throttle(inputForm, 500));
